@@ -1,0 +1,298 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff; /*Color del nombre dle plato y el descripcion del plato*/
+}
+
+header {
+    background-color: #333333; /*Color del header*/
+    color: #fff; /*Color del titulo*/
+    padding: 40px 20px 20px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999; /* Ajusta el valor si es necesario */
+}
+
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    display: inline-block;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px; /* Separa lo ancho del menú */
+}
+
+nav a {
+    color: #fff; /*Color de los nombres del menu*/
+    text-decoration: none;
+}
+
+main {
+    max-width: 1200px;
+    margin: 120px auto 0; /* Agrega un margen superior de 80px (ajusta según sea necesario) */
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 10px; /* Agrega margen inferior al nombre del restaurante */
+}
+
+nav {
+    margin-top: 10px; /* Agrega margen superior al menú */
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.menu-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: calc(25% - 20px);
+    margin-right: 20px;
+    margin-bottom: 20px;
+    vertical-align: top;
+}
+
+.item-details {
+    margin-top: auto;
+}
+
+.menu-item img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.menu-item h3 {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.menu-item p {
+    font-size: 16px;
+    color: #f5f100; /*Color del precio*/
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+/* Popup */
+#popup-content {
+    background: transparent;
+    max-width: 20%;
+    margin: 5% auto;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#popup-image-container {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.popup-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.descripcion-popup { /*color y ubicacion del texto del pop up*/
+    text-align: center;
+    color: #ffffff;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+
+/*MANTENER FIJO EL MARKER DE LOS INGREDIENTES*/
+.ingredientes li {
+    position: relative;
+    margin-left: 20px;
+    line-height: 1.5; /* Ajusta este valor para centrar verticalmente el texto */
+}
+
+  .ingredientes {
+    list-style: none;
+    padding: 0;
+}
+
+.ingredientes li {
+    position: relative;
+    margin-left: 0px;
+}
+
+/* Estilo para los marcadores de ingredientes */
+.ingredientes li::before {
+    content: "•"; /* Puedes cambiar "•" por otro carácter o imagen si lo deseas */
+    margin-right: 5px; /* Espacio entre el marcador y el texto del ingrediente */
+}
+
+/*TAMANO DE LOS ICONOS DEL MENU*/
+nav img {
+    width: 24px; /* Ajusta el tamaño según tus preferencias */
+    margin-right: 5px; /* Agrega un margen derecho para separar el ícono del texto */
+}
+
+.logo {
+    width: 100px; /* Ajusta el tamaño según tus preferencias */
+    position: absolute; /* Hace que el logo flote a la izquierda */
+    margin-left: -350px; /* Mueve el logo hacia la derecha */
+    margin-top: -10px; /* Mueve el logo hacia arriba */
+    /* Si deseas mover el logo hacia abajo o a la izquierda, utiliza propiedades similares con valores negativos. */
+}
+
+.whatsapp-icon {
+    width: 40px; /* Tamaño del ícono de WhatsApp */
+    height: auto; /* Ajuste automático de la altura para mantener la proporción */
+    position: absolute; /* Para permitir el posicionamiento */
+    top: 70px; /* Ajusta la distancia desde la parte superior */
+    margin-left: 220px; /* Ajusta la distancia desde el lado izquierdo */
+}
+
+.ubicacion-icon{
+    width: 40px;
+    height: auto;
+    position: absolute;
+    top: 70px;
+    margin-left: 280px;
+}
+
+
+
+
+
+
+
+
+/* Agregar reglas de estilo para hacer la página responsive */
+
+/* Cambia el tamaño del encabezado y los elementos del menú en pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 20px 10px; /* Reduce el relleno del encabezado */  
+    }
+
+    nav ul {
+        height: 100%; /* Asegura que el menú ocupe toda la altura disponible */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Alinea el menú verticalmente en el centro */
+        align-items: flex-start; /* Alinea el texto a la izquierda */
+        margin-left: 180px;
+    }
+
+    nav li {
+        margin: 5px 0; /* Agrega espacio entre elementos del menú */
+    }
+
+    nav img {
+        width: 16px; /* Reduce el tamaño de los íconos del menú */
+    }
+
+    .logo {
+        width: 100px; /* Reduce el tamaño del logo */
+        margin-left: -190px; /* Alinea el logo hacia la izquierda en pantallas más pequeñas */
+        margin-top: 50px; /* Mueve el logo hacia abajo en pantallas más pequeñas */
+    }
+
+    main {
+        margin-top: 200px; /* Agrega un margen superior para mover el contenido principal hacia abajo */
+        margin-left: 20px; /* Ajusta el valor según la cantidad de desplazamiento deseada hacia la derecha */   
+    }
+
+    .menu-section {
+        justify-content: center; /* Centra los elementos del menú en pantallas más pequeñas */
+    }
+
+    .menu-item {
+        width: calc(50% - 20px); /* Muestra dos elementos por fila en pantallas más pequeñas */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: 100%; /* Asegura que todos los elementos tengan la misma altura */
+    }
+
+    .menu-item h3 {
+        font-size: 16px; /* Reduce el tamaño de los nombres de los platos */
+    }
+
+    .menu-item p {
+        font-size: 14px; /* Reduce el tamaño de los precios */
+    }
+    
+    .whatsapp-icon {
+        width: 50px;
+        height: auto;
+        position: absolute;
+        top: 90px;
+        left: 100px;
+    }
+
+    .ubicacion-icon{
+        width: 40px;
+        height: auto;
+        position:absolute;
+        top: 10px;
+        left: 80px;
+    }
+}
+
+
+
+/* Ajusta el tamaño de las imágenes de los elementos del menú en pantallas más pequeñas */
+@media screen and (max-width: 480px) {
+    .menu-item img {
+        max-height: 150px; /* Reduce la altura máxima de las imágenes */
+    }
+
+    .menu-item h3 {
+        font-size: 16px; /* Reduce el tamaño de los nombres de los platos */
+    }
+
+    .menu-item p {
+        font-size: 14px; /* Reduce el tamaño de los precios */
+    }
+}
+
+  
